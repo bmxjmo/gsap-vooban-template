@@ -1,0 +1,41 @@
+.rbleam::after{
+    content: "";
+    background-color: #fff;
+    height: 6em;
+    width: 3px;
+    margin-right: -1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-name: bleamY;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+.lbleam::after{
+    content: "";
+    background-color: #fff;
+    height: 6em;
+    width: 3px;
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: bleamY;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+@keyframes bleamY {
+    0% {transform: translateY(100vh);}
+    30% {transform: translateY(-101%);}
+    100% {transform: translateY(-101%);}
+}

@@ -1,0 +1,113 @@
+@import 'reset.css';
+@import 'typography.css';
+@import 'animation.css';
+html, body{
+    height: auto;
+    width: 100%;
+}
+body, aside, nav{
+    background-color: #2176ff;
+}
+.page{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 112px 16fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+}
+.content{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 112px 9fr;
+    gap: 0px 0px;
+}
+.sidebar{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+.topbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+
+}
+.sidebar-left::before{
+    content: "";
+    background-color: #ffffff80;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.sidebar-right::before{
+    content: "";
+    background-color: #ffffff80;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.topbar::before{
+    content: "";
+    background-color: #ffffff80;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.main{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.hero{
+    height: calc(100vh - 112px);
+    display: grid;
+    grid-template-columns: 16fr 600px;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    background: orange;
+}
+.hero-a{
+    position: relative;
+    height: 100%;
+    width: 100%;
+} 
+.hero-b{
+    height: 100%;
+    width: 100%;
+}
+.line-block{
+    position: relative;
+    height: 194px;
+    width: 100%;
+}
+.line-block::before{
+    content: "";
+    background-color: #ffffff80;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+/*
+    360x640 (small mobile): 22.64%
+    375x667 (average mobile): 5%
+    720x1280 (large mobile): 2.74%
+    1366x768 (average laptop): 11.98%
+    1440x900 (average desktop): 3.17%
+    1920x1080 (large desktop): 7.35%
+*/
