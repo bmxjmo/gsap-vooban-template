@@ -1,7 +1,15 @@
 'use strict';
 
-export default function init() {
-    
+export const start = () => {
+    gsap.to('.page', 1, {
+        opacity: 1,
+        duration: 1,
+        delay: 0.2,
+        onComplete: headlines
+    });
+}
+
+export const headlines = () => {
     gsap.set('.headline span', {opacity: 1});
     gsap.from(".headline span", 2, {
         scale: 1, 
@@ -16,10 +24,15 @@ export default function init() {
             from: 0
         }
     });
+}
+
+
+/*
+export const scroll = () => {
     
 }
 
-/*
+
 gsap.from(".headline span", 2, {
     scale: 1, 
 	y: 200,

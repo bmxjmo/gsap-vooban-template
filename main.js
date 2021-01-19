@@ -1,6 +1,6 @@
 'use strict';
 
-import init from './animation.js';
+import { start } from './animation.js';
 
 var loader = new XMLHttpRequest();
 
@@ -17,7 +17,7 @@ function updateProgress (event) {
   if (event.lengthComputable) {
     var percentComplete = event.loaded / event.total * 100;
 	//console.log(percentComplete);
-	document.getElementById('loader').innerHTML = percentComplete + '%';
+	document.querySelector('#loader').innerHTML = percentComplete + '%';
   } else {
   }
 }
@@ -27,13 +27,8 @@ function transferComplete(e) {
 	gsap.to('#loader', 1, {
 		opacity: 0,
 		duration: 1,
-		onComplete: gsap.to('.page', 1, {
-			opacity: 1,
-			duration: 1,
-			delay: 1,
-			onComplete: init
-		})
-	});
+		onComplete: start
+	});	
 	//console.log("The transfer is complete.");
 }
 

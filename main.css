@@ -23,7 +23,11 @@ html, body{
     grid-template-rows: 1fr;
     gap: 0px 0px;
     opacity: 0;
+
+    background-color: darkolivegreen;
+    /*
     background-color: #2176ff;
+    */
 }
 .content{
     height: 100%;
