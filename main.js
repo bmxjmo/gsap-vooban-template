@@ -1,33 +1,58 @@
+'use strict';
 
-gsap.from(".headline span", 2, {
-	scale: 1, 
-	y: 200,
-	x: -800,
-	opacity: 1,
-	yoyo: false, 
-	repeat: 0, 
-	ease: "Power2.easeInOut",
-	delay: 1,
-	duration: 0.6,
-	stagger: {
-		amount: 0.6, 
-		grid: [1,6],
-		from: 0
-	}
-  });
+import init from './animation.js';
 
+var loader = new XMLHttpRequest();
 
+loader.addEventListener('progress', updateProgress);
+loader.addEventListener('load', transferComplete);
+loader.addEventListener('error', transferFailed);
+loader.addEventListener('abort', transferCanceled);
 
-const headlines = gsap.utils.toArray('.headline span');
-headlines.forEach(span => {
-  gsap.to(span, { 
-    x: 100,
-    immediateRender: false,
-    scrollTrigger: {
-      trigger: span,
-      scrub: true
-    }
-  })
-});
+loader.open('GET', document.location, true);
+
+loader.send(null);
+
+function updateProgress (event) {
+  if (event.lengthComputable) {
+    var percentComplete = event.loaded / event.total * 100;
+	//console.log(percentComplete);
+	document.getElementById('loader').innerHTML = percentComplete + '%';
+  } else {
+  }
+}
+
+function transferComplete(e) {
+	gsap.set('.headline span', {opacity: 0});
+	gsap.to('#loader', 1, {
+		opacity: 0,
+		duration: 1,
+		onComplete: gsap.to('.page', 1, {
+			opacity: 1,
+			duration: 1,
+			delay: 1,
+			onComplete: init
+		})
+	});
+	//console.log("The transfer is complete.");
+}
+
+function transferFailed(e) {
+  //console.log("An error occurred.");
+}
+
+function transferCanceled(e) {
+  //console.log("The transfer has been canceled.");
+}
+
 /*
+document.addEventListener('DOMContentLoaded', function() {
+    // your code here 
+}, false);
+*/
+
+/*
+(function () {
+	// init part
+})();
 */

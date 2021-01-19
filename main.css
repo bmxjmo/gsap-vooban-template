@@ -1,12 +1,19 @@
 @import 'reset.css';
 @import 'typography.css';
 @import 'animation.css';
+
 html, body{
     height: auto;
     width: 100%;
+    background-color: #fff;
 }
-body, aside, nav{
-    background-color: #2176ff;
+#loader{
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+    padding: 30px;
+    font-size: 200px;
+    color: #ccc;
 }
 .page{
     height: 100%;
@@ -15,6 +22,8 @@ body, aside, nav{
     grid-template-columns: 112px 16fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
+    opacity: 0;
+    background-color: #2176ff;
 }
 .content{
     height: 100%;
@@ -35,7 +44,6 @@ body, aside, nav{
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-
 }
 .sidebar-left::before{
     content: "";
