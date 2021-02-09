@@ -11,17 +11,17 @@ export const start = () => {
 
 export const headlines = () => {
     gsap.set('.headline span', {opacity: 1});
-    gsap.from(".headline span", 2, {
+    gsap.from('.headline span', 2, {
         scale: 1, 
         y: 200,
         x: -800,
-        ease: "Power2.easeInOut",
+        ease: 'Power2.easeInOut',
         delay: 0,
         duration: 0.6,
         stagger: {
-            amount: 0.6, 
             grid: [1,6],
-            from: 0
+            from: 0,
+            amount: 0.6
         }
     });
 }
