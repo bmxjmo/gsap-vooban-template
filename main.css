@@ -12,7 +12,7 @@ html, body{
     z-index: 10;
     background-color: #fff;
     padding: 30px;
-    font-size: 200px;
+    font-size: 12vh;
     color: #ccc;
 }
 .page{
@@ -23,11 +23,8 @@ html, body{
     grid-template-rows: 1fr;
     gap: 0px 0px;
     opacity: 0;
-
-    background-color: darkolivegreen;
-    /*
-    background-color: #2176ff;
-    */
+    background-color: darkcyan; /* teste */
+    /*background-color: rgb(44, 98, 199);  tema */
 }
 .content{
     height: 100%;
@@ -87,7 +84,7 @@ html, body{
     grid-template-columns: 16fr 600px;
     grid-template-rows: 1fr;
     gap: 0px 0px;
-    background: orange;
+    background: orange; /* teste */
 }
 .hero-a{
     position: relative;
@@ -97,6 +94,8 @@ html, body{
 .hero-b{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .line-block{
     position: relative;
@@ -113,7 +112,20 @@ html, body{
     left: 0;
 }
 
-
+@media screen and (max-width: 1024px) {
+    .page {
+        background-color: tomato; /* teste */
+        grid-template-columns: 16fr;
+        grid-template-rows: 1fr;
+    }
+    .hero{
+        grid-template-columns: 16fr 300px;
+        grid-template-rows: 1f;
+    }
+    aside.sidebar-left{
+        display: none;
+    }
+} 
 
 /*
     360x640 (small mobile): 22.64%

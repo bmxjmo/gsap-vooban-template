@@ -1,15 +1,16 @@
 'use strict';
 
 export const start = () => {
-    gsap.to('.page', 1, {
+    gsap.to('.page', 0.5, {
         opacity: 1,
         duration: 1,
         delay: 0.2,
-        onComplete: headlines
+        onStart: headlines
     });
 }
 
 export const headlines = () => {
+    document.querySelector('#loader').remove();
     gsap.set('.headline span', {opacity: 1});
     gsap.from('.headline span', 2, {
         scale: 1, 
@@ -25,42 +26,3 @@ export const headlines = () => {
         }
     });
 }
-
-
-/*
-export const scroll = () => {
-    
-}
-
-
-gsap.from(".headline span", 2, {
-    scale: 1, 
-	y: 200,
-	x: -800,
-	opacity: 1,
-	yoyo: false, 
-	repeat: 0, 
-	ease: "Power2.easeInOut",
-	delay: 1,
-	duration: 0.6,
-	stagger: {
-        amount: 0.6, 
-		grid: [1,6],
-		from: 0
-	}
-});
-
-
-
-const headlines = gsap.utils.toArray('.headline span');
-headlines.forEach(span => {
-    gsap.to(span, { 
-        x: 100,
-        immediateRender: false,
-        scrollTrigger: {
-            trigger: span,
-            scrub: true
-        }
-    })
-});
-*/

@@ -12,42 +12,68 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 500;
 }
 .headline{
-    font-size: 10vh;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: -0.08em;
     position: absolute;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
     bottom: calc(-100vh + 112px);
     left: 0;
     width: 100%;
     height: 100%;
-    transform-origin: 0 0;
-    transform: rotate(-90deg);
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12vh;
 }
 .headline span{
     position: absolute;
     display: block;
     width: 100%;
-    background-color: darkorange;
+    background-color: darkorange; /* teste */
 }
 .headline span:nth-child(1) {
     top:45px;
 }
 .headline span:nth-child(2) {
-    top:calc(45px + 10vh);
+    top:calc(45px + 12vh);
 }
 .headline span:nth-child(3) {
-    top:calc(45px + 10vh*2);
+    top:calc(45px + 12vh*2);
 }
 .headline span:nth-child(4) {
-    top:calc(45px + 10vh*3);
+    top:calc(45px + 12vh*3);
 }
 .headline span:nth-child(5) {
-    top:calc(45px + 10vh*4);
+    top:calc(45px + 12vh*4);
 }
 .headline span:nth-child(6) {
-    top:calc(45px + 10vh*5);
+    top:calc(45px + 12vh*5);
 }
-.lead-text{
-    padding: 30px;
+p.lead-text{
+    padding: 60px 30px 15px;
+    font-size: 24px;
 }
+a.calltoaction{
+    padding: 15px 25px;
+    margin: 15px 30px;
+    border-radius: 6px;
+    background-color: blueviolet; /* teste */
+    /*background-color:none;  tema */
+    /*border: 1px solid #fff; tema */
+    align-self: flex-start;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    font-style: italic;
+    color: #fff;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+    p.lead-text{
+        font-size: 18px;
+    }
+    a.calltoaction{
+        margin: 5px 30px;
+        font-size: 18px;
+    }
+} 

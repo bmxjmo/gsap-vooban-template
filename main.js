@@ -39,15 +39,3 @@ function transferFailed(e) {
 function transferCanceled(e) {
   //console.log("The transfer has been canceled.");
 }
-
-/*
-document.addEventListener('DOMContentLoaded', function() {
-    // your code here 
-}, false);
-*/
-
-/*
-(function () {
-	// init part
-})();
-*/
